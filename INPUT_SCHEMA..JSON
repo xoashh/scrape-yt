@@ -1,0 +1,29 @@
+{
+  "title": "YouTube Comment Scraper Input",
+  "description": "Provide a list of YouTube video URLs and an optional maximum number of comments to scrape per video.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "videoUrls": {
+      "title": "YouTube Video URLs",
+      "type": "array",
+      "description": "List of YouTube video URLs to scrape comments from.",
+      "editor": "stringList",
+      "prefill": ["https://www.youtube.com/watch?v=dQw4w9WgXcQ"]
+    },
+    "maxComments": {
+      "title": "Maximum Comments per Video",
+      "type": "integer",
+      "description": "The maximum number of comments to scrape. Leave empty to scrape all comments.",
+      "editor": "number",
+      "nullable": true
+    },
+    "useProxy": {
+      "title": "Use Apify Proxy",
+      "type": "boolean",
+      "description": "Enable Apify Proxy to reduce the chance of being blocked by YouTube.",
+      "default": true
+    }
+  },
+  "required": ["videoUrls"]
+}
